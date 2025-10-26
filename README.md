@@ -1,3 +1,7 @@
+
+
+# 《谿山琴況》全文審訂版
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -10,5 +14,6 @@
 # 《谿山琴況》全文審訂版
 
 
+* [《谿山琴況》全文](./xishanqinkuang.text.md)
 
 
