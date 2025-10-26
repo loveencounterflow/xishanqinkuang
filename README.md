@@ -22,6 +22,9 @@
 
 * **`[—]`** replace 為 -> 爲 (?)
 * **`[—]`** replace 真 -> 眞 (?)
+* **`[—]`** replace 已 -> 巳 (?)
+* **`[—]`** replace 耶 -> u-cjk-xc/2b180 𫆀 (?)
+
 
 ## Is Done
 
