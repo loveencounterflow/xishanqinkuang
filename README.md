@@ -7,6 +7,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [《谿山琴況》全文審訂版](#%E8%B0%BF%E5%B1%B1%E7%90%B4%E6%B3%81%E5%85%A8%E6%96%87%E5%AF%A9%E8%A8%82%E7%89%88)
+  - [Progress](#progress)
   - [To Do](#to-do)
   - [Is Done](#is-done)
 
@@ -18,12 +19,41 @@
 
 * [《谿山琴況》全文](./xishanqinkuang.text.md)
 
+## Progress
+
+* **(1) 一曰「和」**: — passes
+* **(2) 一曰「靜」**: — passes
+* **(3) 一曰「清」**: — passes
+* **(4) 一曰「遠」**: — passes
+* **(5) 一曰「古」**: — passes
+* **(6) 一曰「澹」**: — passes
+* **(7) 一曰「恬」**: — passes
+* **(8) 一曰「逸」**: — passes
+* **(9) 一曰「雅」**: — passes
+* **(10) 一曰「麗」**: — passes
+* **(11) 一曰「亮」**: — passes
+* **(12) 一曰「采」**: — passes
+* **(13) 一曰「潔」**: — passes
+* **(14) 一曰「潤」**: — passes
+* **(15) 一曰「圓」**: — passes
+* **(16) 一曰「堅」**: — passes
+* **(17) 一曰「宏」**: — passes
+* **(18) 一曰「細」**: — passes
+* **(19) 一曰「溜」**: — passes
+* **(20) 一曰「徤」**: 1 passes
+* **(21) 一曰「輕」**: — passes
+* **(22) 一曰「重」**: — passes
+* **(23) 一曰「遲」**: — passes
+* **(24) 一曰「速」**: — passes
+
 ## To Do
 
 * **`[—]`** replace 為 -> 爲 (?)
 * **`[—]`** replace 真 -> 眞 (?)
 * **`[—]`** replace 已 -> 巳 (?)
 * **`[—]`** replace 耶 -> u-cjk-xc/2b180 𫆀 (?)
+* **`[—]`** replace 粗 -> 麤 (?)
+* **`[—]`** replace 沖 -> 冲 (?)
 
 
 ## Is Done
