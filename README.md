@@ -54,7 +54,10 @@
 * **`[—]`** replace 耶 -> u-cjk-xc/2b180 𫆀 (?)
 * **`[—]`** replace 粗 -> 麤 (?)
 * **`[—]`** replace 沖 -> 冲 (?)
-
+* **`[—]`** replace 陰 -> 隂 (?)
+* **`[—]`** replace 蓋 -> 葢 (?)
+* **`[—]`** replace 紀 -> ⿰糹㔾 (?)
+* **`[—]`** replace 嘗 -> u-cjk-xb-21ba2 𡮢 (?)
 
 ## Is Done
 
