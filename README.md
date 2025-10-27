@@ -64,6 +64,7 @@
 * **`[—]`** replace 葉 -> 叶 (?)
 * **`[—]`** replace 由 -> 繇 (?)
 * **`[—]`** replace 玄 -> 𤣥 (?)
+* **`[—]`** replace 密 -> 宻 (?)
 * **`[—]`** 滾 is written as ⿰氵𫋴 (u-cjk-xc/2b2f4 𫋴:⿱六衣), in UCS only 滚(?)
 
 ## Is Done
