@@ -39,7 +39,7 @@
 * **(16) 一曰「堅」**: — passes
 * **(17) 一曰「宏」**: — passes
 * **(18) 一曰「細」**: — passes
-* **(19) 一曰「溜」**: — passes
+* **(19) 一曰「溜」**: 1 passes
 * **(20) 一曰「徤」**: 1 passes
 * **(21) 一曰「輕」**: 1 passes
 * **(22) 一曰「重」**: 1 passes
@@ -64,10 +64,10 @@
 * **`[—]`** replace 葉 -> 叶 (?)
 * **`[—]`** replace 由 -> 繇 (?)
 * **`[—]`** replace 玄 -> 𤣥 (?)
+* **`[—]`** 滾 is written as ⿰氵𫋴 (u-cjk-xc/2b2f4 𫋴:⿱六衣), in UCS only 滚(?)
 
 ## Is Done
 
 * **`[+]`** replace （破乏）-> 砭
 * **`[+]`** replace 弦 -> 絃
 * **`[+]`** replace (most) 日 -> 曰
-
