@@ -101,6 +101,12 @@
 * **`[—]`** discuss (18細) 至章句轉折時，尤不可草草放過 -> 至章句轉折，時尤不可草草放過
 * **`[—]`** 直 is written as 直 ⿱𠔁皿
 
+  * u-cjk/76f4  直 u-cjk-cmpi1/faa8  直
+  * u-cjk/76f4  直 u-cjk-cmpi2/2f940 直
+
+
+
+
 ## Is Done
 
 * **`[+]`** replace （破乏）-> 砭
