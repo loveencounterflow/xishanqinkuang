@@ -99,6 +99,7 @@
 * **`[—]`** 滾 is written as ⿰氵𫋴 (u-cjk-xc/2b2f4 𫋴:⿱六衣), in UCS only 滚(?)
 * **`[—]`** 益 is written as ⿱𠔁皿
 * **`[—]`** discuss (18細) 至章句轉折時，尤不可草草放過 -> 至章句轉折，時尤不可草草放過
+* **`[—]`** 直 is written as 直 ⿱𠔁皿
 
 ## Is Done
 
