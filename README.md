@@ -69,6 +69,7 @@
 * **`[—]`** replace 樸 -> 朴 (?)
 * **`[—]`** replace 況 -> 况 (?)
 * **`[—]`** 滾 is written as ⿰氵𫋴 (u-cjk-xc/2b2f4 𫋴:⿱六衣), in UCS only 滚(?)
+* **`[—]`** 益 is written as ⿱𠔁皿
 * **`[—]`** discuss (18細) 至章句轉折時，尤不可草草放過 -> 至章句轉折，時尤不可草草放過
 
 ## Is Done
