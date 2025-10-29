@@ -80,7 +80,7 @@
 * **`[—]`** replace 由 -> 繇 (?)
 * **`[—]`** replace 玄 -> 𤣥 (?)
 * **`[—]`** replace 媚 -> 𡡾 (?)
-* **`[—]`** replace 深 -> 㴱 (?) (partial)
+* **`[+]`** replace 深 -> 㴱 (?) (partial)
 * **`[—]`** replace 逸 -> 𨓜 (?)
 * **`[—]`** replace 群 -> 羣 (?)
 * **`[—]`** replace 疏 -> 疎 (?)
