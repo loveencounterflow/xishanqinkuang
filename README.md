@@ -81,7 +81,6 @@
 * **`[—]`** replace 玄 -> 𤣥 (?)
 * **`[—]`** replace 媚 -> 𡡾 (?)
 * **`[—]`** replace 逸 -> 𨓜 (?)
-* **`[—]`** replace 著 -> 着 (?)
 * **`[—]`** replace 峨嵋 -> 峨𡼴 (?)
 * **`[—]`** 滾 is written as ⿰氵𫋴 (u-cjk-xc/2b2f4 𫋴:⿱六衣), in UCS only 滚(?)
 * **`[—]`** 益 is written as ⿱𠔁皿 (except in (1))
@@ -114,6 +113,7 @@
 * **`[+]`** replace 深 -> 㴱 (?) (partial)
 * **`[+]`** replace 群 -> 羣 (?)
 * **`[+]`** replace 疏 -> 疎 (?) (everywhere except in (17) 一曰「宏」, (22) 一曰「重」)
+* **`[+]`** replace 著 -> 着 (?)
 
 
 ## Notes
