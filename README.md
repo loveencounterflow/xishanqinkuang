@@ -71,11 +71,7 @@
 ## To Do
 
 * **`[—]`** replace 已 -> 巳 (?)
-* **`[—]`** replace 耶 -> u-cjk-xc/2b180 𫆀 (?)
 * **`[—]`** replace 紀 -> ⿰糹㔾 (?)
-* **`[—]`** replace 嘗 -> u-cjk-xb-21ba2 𡮢 (?)
-* **`[—]`** replace 媚 -> 𡡾 (?)
-* **`[—]`** replace 峨嵋 -> 峨𡼴 (?)
 * **`[—]`** 滾 is written as ⿰氵𫋴 (u-cjk-xc/2b2f4 𫋴:⿱六衣), in UCS only 滚(?)
 * **`[—]`** 益 is written as ⿱𠔁皿 (except in (1))
 * **`[—]`** discuss (18細) 至章句轉折時，尤不可草草放過 -> 至章句轉折，時尤不可草草放過
@@ -114,6 +110,10 @@
 * **`[+]`** replace 由 -> 繇 (?)
 * **`[+]`** replace 玄 -> 𤣥 (?)
 * **`[+]`** replace 逸 -> 𨓜 (?)
+* **`[+]`** replace 媚 -> 𡡾 (?)
+* **`[+]`** replace 峨嵋 -> 峨𡼴 (?)
+* **`[+]`** replace 耶 -> u-cjk-xc/2b180 𫆀 (?)
+* **`[+]`** replace 嘗 -> u-cjk-xb-21ba2 𡮢 (?)
 
 
 ## Notes
