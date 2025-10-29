@@ -11,6 +11,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
+    "bricabrac-sfmodules": "link:../bricabrac-sfmodules",
     "execa": "^9.6.0",
     "guy": "^14.2.0"
   }
