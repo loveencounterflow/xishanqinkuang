@@ -100,6 +100,7 @@
 * **`[—]`** 直 is written as ⿱𥃭𠃊
 * **`[—]`** 確 is written as ⿰石寉
 * **`[—]`** 稽 looks like ⿰禾⿱𠂉𠮳
+* **`[—]`** 逓 looks like ⿺辶⿸𠂆帀
 
 
 
