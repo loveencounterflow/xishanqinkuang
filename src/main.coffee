@@ -63,6 +63,11 @@ class Xsqk_differ
     stream = new Async_jetstream()
     # stream.push ( d ) -> debug 'Ωxsqk___4', d
     #.........................................................................................................
+    stream.push erase_blocks = ( d ) ->
+      return yield d unless d.type is 'raw'
+      yield lets d, ( d ) -> d.line = d.line.replace /█/g, ''
+      ;null
+    #.........................................................................................................
     stream.push filter_diff_start = ( d ) ->
       # debug 'Ωxsqk___1', ( rpr d )[ .. 100 ]
       return null if d.line is ''
@@ -73,6 +78,7 @@ class Xsqk_differ
       return null if d.line.startsWith '@@ '
       d = lets d, ( d ) -> d.type = 'markdown'
       yield d
+      ;null
     #.........................................................................................................
     stream.push translate_changes = ( d ) ->
       yield lets d, ( d ) ->
@@ -112,6 +118,7 @@ class Xsqk_differ
     stream.push write_output = ( d ) ->
       return yield d unless d.type is 'html'
       FS.appendFileSync report_path, d.line
+      yield d
       ;null
     #.........................................................................................................
     # for { line, } from walk_lines_with_positions old_path
@@ -132,5 +139,4 @@ demo = ->
 #===========================================================================================================
 if module is require.main then await do =>
   await demo()
-
 
