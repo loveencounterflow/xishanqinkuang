@@ -135,6 +135,10 @@ class Xsqk_differ
         d.type = 'html'
         d.line = "\n<div>#{d.line}</div></article>\n"
       ;null
+    #.......................................................................................................
+    jet.push '#first', add_title = ( d ) ->
+      yield d
+      yield { type: 'html', line: "\n<h1>《谿山琴况》</h1>\n"}
       ;null
     #.......................................................................................................
     jet.push '#first', clear_file   = ( d ) -> FS.writeFileSync report_path, ''
