@@ -13,6 +13,7 @@
   "dependencies": {
     "bricabrac-sfmodules": "link:../bricabrac-sfmodules",
     "execa": "^9.6.0",
-    "guy": "^14.2.0"
+    "guy": "^14.2.0",
+    "letsfreezethat": "^3.1.0"
   }
 }
