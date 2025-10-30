@@ -10,6 +10,8 @@
   - [Table of Contents](#table-of-contents)
   - [Progress](#progress)
   - [To Do](#to-do)
+    - [Unresolved Characters](#unresolved-characters)
+    - [Diff Report](#diff-report)
   - [Is Done](#is-done)
   - [Notes](#notes)
 
@@ -70,6 +72,8 @@
 
 ## To Do
 
+### Unresolved Characters
+
 * **`[—]`** replace 已 -> 巳 (?)
 * **`[—]`** replace 紀 -> ⿰糹㔾 (?)
 * **`[—]`** discuss (18細) 至章句轉折時，尤不可草草放過 -> 至章句轉折，時尤不可草草放過
@@ -79,6 +83,14 @@
 * **`[—]`** 確 is written as ⿰石寉
 * **`[—]`** 稽 is written as ⿰禾⿱𠂉𠮳
 * **`[—]`** 逓 is written as ⿺辶⿸𠂆帀
+
+### Diff Report
+
+* **`[—]`** filter lines for diff from commit 104, write to old_path
+* **`[—]`** filter lines for diff from current,    write to new_path
+* **`[—]`** perform diff, write to diff.txt
+* **`[—]`** read diff, write to report.html
+  * **`[—]`** collect character pairs, append substitution table
 
 
 
