@@ -1,0 +1,11 @@
+
+del,
+ins {
+  padding:                0.5mm;
+  text-decoration:        none; }
+
+del {
+  background-color:       pink; }
+
+ins {
+  background-color:       lime; }
