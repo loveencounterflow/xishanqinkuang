@@ -65,11 +65,6 @@ class Xsqk_differ
     jet = new Async_jetstream()
     # jet.push ( d ) -> debug 'Ωxsqk___1', d
     #.......................................................................................................
-    jet.push erase_blocks = ( d ) ->
-      return yield d unless d.type is 'raw'
-      yield lets d, ( d ) -> d.line = d.line.replace /█/gv, ''
-      ;null
-    #.......................................................................................................
     jet.push filter_diff_start = ( d ) ->
       # debug 'Ωxsqk___2', ( rpr d )[ .. 100 ]
       return null if d.line is ''
@@ -78,11 +73,15 @@ class Xsqk_differ
       return null if d.line.startsWith '--- '
       return null if d.line.startsWith '+++ '
       return null if d.line.startsWith '@@ '
-      d = lets d, ( d ) -> d.type = 'markdown'
       yield d
       ;null
     #.......................................................................................................
-    jet.push '#last,data', record_swaps = do ->
+    jet.push erase_blocks = ( d ) ->
+      return yield d unless d.type is 'raw'
+      yield lets d, ( d ) ->
+        # d.line = d.line.replace /█/gv, ''
+        d.type = 'markdown'
+      ;null
     #.......................................................................................................
     jet.push '#last,data', do record_swaps = ->
       swaps = new Set()
