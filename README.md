@@ -86,8 +86,8 @@
 
 ### Diff Report
 
-* **`[—]`** filter lines for diff from commit 104, write to old_path
-* **`[—]`** filter lines for diff from current,    write to new_path
+* **`[—]`** <del>filter lines for diff from commit 104, write to old_path</del>
+* **`[—]`** <del>filter lines for diff from current,    write to new_path</del>
 * **`[—]`** perform diff, write to diff.txt
 * **`[—]`** read diff, write to report.html
   * **`[—]`** collect character pairs, append substitution table
