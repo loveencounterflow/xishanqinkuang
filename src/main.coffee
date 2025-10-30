@@ -119,7 +119,7 @@ class Xsqk_differ
     #.......................................................................................................
     jet.push translate_headings = ( d ) ->
       return yield d unless d.type is 'markdown'
-      return yield d unless ( match = d.line.match /^(?<hashes>#{1,6})\s(?<heading>.*)$/ )?
+      return yield d unless ( match = d.line.match /^(?<hashes>#{1,6})\s(?<heading>.*)$/v )?
       { hashes,
         heading,  } = match.groups
       tag_name      = "h#{hashes.length}"
