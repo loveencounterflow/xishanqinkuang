@@ -126,14 +126,15 @@ class Xsqk_differ
       # heading       = heading.replace /№\s*/gv, ''
       yield lets d, ( d ) ->
         d.type = 'html'
-        d.line = "\n\n<#{tag_name}>#{heading}</#{tag_name}>\n"
+        d.line = "\n\n<article><#{tag_name}>#{heading}</#{tag_name}>\n"
       ;null
     #.......................................................................................................
     jet.push add_divs = ( d ) ->
       return yield d unless d.type is 'markdown'
       yield lets d, ( d ) ->
         d.type = 'html'
-        d.line = "\n<div>#{d.line}</div>\n"
+        d.line = "\n<div>#{d.line}</div></article>\n"
+      ;null
       ;null
     #.......................................................................................................
     jet.push '#first', clear_file   = ( d ) -> FS.writeFileSync report_path, ''
