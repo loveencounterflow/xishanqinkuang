@@ -1,4 +1,17 @@
 
+
+body {
+  font-size:              5mm;
+  font-family:            "sunflower-u-cjk-xa-centered", serif; }
+
+article {
+  break-inside:           avoid; }
+
+swaps {
+  display:                block;
+  break-inside:           avoid;
+  columns:                4; }
+
 del,
 ins {
   padding:                0.5mm;
@@ -8,4 +21,5 @@ del {
   background-color:       pink; }
 
 ins {
-  background-color:       lime; }
+  background-color:       #9af4f3; }
+
