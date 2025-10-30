@@ -54,22 +54,24 @@ class Xsqk_differ
 
   #---------------------------------------------------------------------------------------------------------
   write_report: ->
-    #.........................................................................................................
+    first = Symbol 'first'
+    last  = Symbol 'last'
+    #.......................................................................................................
     # old_path = PATH.resolve __dirname, '..', 'comparison/result/filtered.old.md'
     # new_path = PATH.resolve __dirname, '..', 'comparison/result/filtered.new.md'
     diff_path   = PATH.resolve __dirname, '../comparison/result/diff.txt'
     report_path = PATH.resolve __dirname, '../comparison/result/report.html'
-    #.........................................................................................................
-    stream = new Async_jetstream()
-    # stream.push ( d ) -> debug 'Ωxsqk___4', d
-    #.........................................................................................................
-    stream.push erase_blocks = ( d ) ->
+    #.......................................................................................................
+    jet = new Async_jetstream()
+    # jet.push ( d ) -> debug 'Ωxsqk___1', d
+    #.......................................................................................................
+    jet.push erase_blocks = ( d ) ->
       return yield d unless d.type is 'raw'
-      yield lets d, ( d ) -> d.line = d.line.replace /█/g, ''
+      yield lets d, ( d ) -> d.line = d.line.replace /█/gv, ''
       ;null
-    #.........................................................................................................
-    stream.push filter_diff_start = ( d ) ->
-      # debug 'Ωxsqk___1', ( rpr d )[ .. 100 ]
+    #.......................................................................................................
+    jet.push filter_diff_start = ( d ) ->
+      # debug 'Ωxsqk___2', ( rpr d )[ .. 100 ]
       return null if d.line is ''
       return null if d.line.startsWith 'diff --git'
       return null if d.line.startsWith 'index '
@@ -79,56 +81,77 @@ class Xsqk_differ
       d = lets d, ( d ) -> d.type = 'markdown'
       yield d
       ;null
-    #.........................................................................................................
-    stream.push translate_changes = ( d ) ->
+    #.......................................................................................................
+    jet.push '#last,data', record_swaps = do ->
+      swaps = new Set()
+      #.....................................................................................................
+      return ( d ) ->
+        if d is last
+          for swap from swaps
+            yield freeze { type: 'html', line: "<div>#{swap}</div>\n", }
+          return null
+        #...................................................................................................
+        return yield d unless d.type is 'markdown'
+        #...................................................................................................
+        matches = d.line.matchAll /\[-(?<del>.)-\]\{\+(?<ins>.)\+\}/gv
+        matches = [ matches..., ]
+        if matches.length > 0
+          for match from matches
+            { del,
+              ins, } = match.groups
+            debug 'Ωxsqk___3', { del, ins, }
+            swaps.add "#{del}->#{ins}"
+        yield d
+    #.......................................................................................................
+    jet.push translate_changes = ( d ) ->
       yield lets d, ( d ) ->
         # d.type = 'html'
-        d.line = d.line.replace /\[-/g,   '<del>'
-        d.line = d.line.replace /-\]/g,   '</del>'
-        d.line = d.line.replace /\{\+/g,  '<ins>'
-        d.line = d.line.replace /\+\}/g,  '</ins>'
+        d.line = d.line.replace /\[-/gv,   '<del>'
+        d.line = d.line.replace /-\]/gv,   '</del>'
+        d.line = d.line.replace /\{\+/gv,  '<ins>'
+        d.line = d.line.replace /\+\}/gv,  '</ins>'
         # d.line = "\n<div>#{d.line}</div>\n\n"
       ;null
-    #.........................................................................................................
-    stream.push translate_headings = ( d ) ->
+    #.......................................................................................................
+    jet.push translate_headings = ( d ) ->
       return yield d unless d.type is 'markdown'
       return yield d unless ( match = d.line.match /^(?<hashes>#{1,6})\s(?<heading>.*)$/ )?
       { hashes,
         heading,  } = match.groups
       tag_name      = "h#{hashes.length}"
-      # heading       = heading.replace /№\s*/g, ''
+      # heading       = heading.replace /№\s*/gv, ''
       yield lets d, ( d ) ->
         d.type = 'html'
         d.line = "\n\n<#{tag_name}>#{heading}</#{tag_name}>\n"
       ;null
-    #.........................................................................................................
-    stream.push add_divs = ( d ) ->
+    #.......................................................................................................
+    jet.push add_divs = ( d ) ->
       return yield d unless d.type is 'markdown'
       yield lets d, ( d ) ->
         d.type = 'html'
         d.line = "\n<div>#{d.line}</div>\n"
       ;null
-    #.........................................................................................................
-    stream.push '#first', clear_file   = ( d ) -> FS.writeFileSync report_path, ''
-    stream.push '#first', prepend_css  = ( d ) -> yield d; yield freeze { type: 'html', line: "<link rel=stylesheet href='./diff.css'>", } ;null
-    stream.push '#first', prepend_html = ( d ) -> yield d; yield freeze { type: 'html', line: html_start_tags, } ;null
-    stream.push '#last',  append_eof   = ( d ) -> yield { line: '<!-- eof -->', }; yield d ;null
-    stream.push '*', ( d ) -> whisper 'Ωxsqk___1', ( rpr d )[ .. 100 ]
-    #.........................................................................................................
-    stream.push write_output = ( d ) ->
+    #.......................................................................................................
+    jet.push '#first', clear_file   = ( d ) -> FS.writeFileSync report_path, ''
+    jet.push '#first', prepend_css  = ( d ) -> yield d; yield freeze { type: 'html', line: "<link rel=stylesheet href='./diff.css'>", } ;null
+    jet.push '#first', prepend_html = ( d ) -> yield d; yield freeze { type: 'html', line: html_start_tags, } ;null
+    jet.push '#last',  append_eof   = ( d ) -> yield { line: '<!-- eof -->', }; yield d ;null
+    jet.push '*', ( d ) -> whisper 'Ωxsqk___4', ( rpr d )[ .. 100 ]
+    #.......................................................................................................
+    jet.push write_output = ( d ) ->
       return yield d unless d.type is 'html'
       FS.appendFileSync report_path, d.line
       yield d
       ;null
-    #.........................................................................................................
+    #.......................................................................................................
     # for { line, } from walk_lines_with_positions old_path
-    #   stream.send { version: 'old', line, }
-    stream.cue 'first'
+    #   jet.send { version: 'old', line, }
+    jet.send first
     for { lnr, line, eof, } from walk_lines diff_path
-      stream.send freeze { type: 'raw', lnr, line, }
-    stream.cue 'last'
-    await stream.run()
-    #.........................................................................................................
+      jet.send freeze { type: 'raw', lnr, line, }
+    jet.send last
+    await jet.run()
+    #.......................................................................................................
     ;null
 
 #===========================================================================================================
