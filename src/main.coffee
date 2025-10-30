@@ -83,24 +83,28 @@ class Xsqk_differ
       ;null
     #.......................................................................................................
     jet.push '#last,data', record_swaps = do ->
+    #.......................................................................................................
+    jet.push '#last,data', do record_swaps = ->
       swaps = new Set()
       #.....................................................................................................
       return ( d ) ->
         if d is last
+          yield freeze { type: 'html', line: "<swaps>\n", }
           for swap from swaps
             yield freeze { type: 'html', line: "<div>#{swap}</div>\n", }
+          yield freeze { type: 'html', line: "</swaps>\n", }
           return null
         #...................................................................................................
         return yield d unless d.type is 'markdown'
         #...................................................................................................
-        matches = d.line.matchAll /\[-(?<del>.)-\]\{\+(?<ins>.)\+\}/gv
+        matches = d.line.matchAll /\[-(?<del>[^\]\}]+)-\]\{\+(?<ins>[^\]\}]+)\+\}/gv
         matches = [ matches..., ]
         if matches.length > 0
           for match from matches
             { del,
               ins, } = match.groups
             debug 'Ωxsqk___3', { del, ins, }
-            swaps.add "#{del}->#{ins}"
+            swaps.add "#{del}▶#{ins}"
         yield d
     #.......................................................................................................
     jet.push translate_changes = ( d ) ->
